@@ -46,8 +46,33 @@ Specific bands fan-base, music, concert and live music enthusiasts that haven't 
 
 ## Application Architecture Diagram
 
-![alt text](./docs/R2-DFD.png "Application Architecture Diagram")
+![alt text](./docs/Secret-venue_ArchitectureDiagram.png "Application Architecture Diagram")
 
 ## User Stories
 
-![alt text](./docs/R2-DFD.png "User Stories")
+![alt text](./docs/secret-venue_userStories.png "User Stories")
+
+## Wireframes
+
+![alt text](./docs/wireframes_desktop/Homepage_desktop.png"Home page Desktop")
+
+![alt text](./docs/wireframes_desktop/Signup_desktop.png"Sign up desktop")
+
+![alt text](./docs/wireframes_desktop/Login_desktop.png"Login desktop")
+
+![alt text](./docs/wireframes_desktop/Profile_desktop.png"Profile desktop")
+
+![alt text](./docs/wireframes_desktop/Admin_desktop.png"Admin Dashboard desktop")
+
+![alt text](./ddocs/wireframes_desktop/Profiles_desktop.png"Profiles desktop")
+
+![alt text](./docs/wireframes_desktop/Events_desktop.png"Events desktop")
+
+
+## Trello Screenshots
+
+![alt text](./docs/screenshots/trello_screenshot1.png "Trello 1")
+
+![alt text](./docs/screenshots/trello_screenshot2.png "Trello 2")
+
+![alt text](./docs/screenshots/trello_screenshot3.png "Trello 3")
