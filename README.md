@@ -54,20 +54,13 @@ Specific bands fan-base, music, concert and live music enthusiasts that haven't 
 
 ## Wireframes
 
-![alt text](./docs/wireframes_desktop/Homepage_desktop.png"Home page Desktop")
-
-![alt text](./docs/wireframes_desktop/Signup_desktop.png"Sign up desktop")
-
-![alt text](./docs/wireframes_desktop/Login_desktop.png"Login desktop")
-
-![alt text](./docs/wireframes_desktop/Profile_desktop.png"Profile desktop")
-
-![alt text](./docs/wireframes_desktop/Admin_desktop.png"Admin Dashboard desktop")
-
-![alt text](./ddocs/wireframes_desktop/Profiles_desktop.png"Profiles desktop")
-
-![alt text](./docs/wireframes_desktop/Events_desktop.png"Events desktop")
-
+![alt text](./docs/wireframes_desktop/Home_desktop.png "Home page Desktop")
+![alt text](./docs/wireframes_desktop/Signup_desktop.png "Sign up desktop")
+![alt text](./docs/wireframes_desktop/Login_desktop.png "Login desktop")
+![alt text](./docs/wireframes_desktop/Profile_desktop.png "Profile desktop")
+![alt text](./docs/wireframes_desktop/Admin_desktop.png  "Admin desktop") 
+![alt text](./docs/wireframes_desktop/Profiles_desktop.png "Profiles dsk")
+![alt text](./docs/wireframes_desktop/Events_desktop.png "Events dsk")
 
 ## Trello Screenshots
 
