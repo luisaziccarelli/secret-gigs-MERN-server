@@ -8,9 +8,8 @@ Luisa Ziccarelli | https://github.com/luisaziccarelli
 ## Purpose
 Secret Gigs allows bands to connect with their fan-base in a live setting during COVID times. Due to audience restrictions and venues being generally closed, this app allows fans to attend events in secret locations for a limited number of attendees by a random selection process. The idea is to keep the social distancing and safety measures in place, while allowing safe and controlled events.
 
-## Functionality
-
 ## Features
+
 - A user can register in the application. 
 - A registered user is able to login.
 - A registered user is able to go to the account section. In this section they can see their profile and event applications, listing current available events they can apply to.
