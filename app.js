@@ -6,6 +6,7 @@ const mongoose = require("mongoose")
 // Sets port if deploying to external provider 
 // or port assigned already
 const port = process.env.PORT || 3002;
+//
 
 // Equivalent of create server in http library
 const app = express();
