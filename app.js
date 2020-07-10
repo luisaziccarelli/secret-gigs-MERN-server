@@ -5,7 +5,8 @@ const mongoose = require("mongoose")
 
 // Sets port if deploying to external provider 
 // or port assigned already
-const port = process.env.port || 3002;
+const port = process.env.PORT || 3002;
+//
 
 if(process.env.NODE_ENV !== 'production') {
     require('dotenv').config();
@@ -17,6 +18,11 @@ const app = express();
 // Call the middleware we want to use
 app.use(cors());
 app.use(bodyParser.json());
+
+if(process.env.NODE_ENV !== 'production') {
+    require('dotenv').config();
+  }
+
 
 // Connect to database
 
