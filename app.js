@@ -7,7 +7,7 @@ const eventRouter = require("./routes/event_routes")
 
 // Sets port if deploying to external provider 
 // or port assigned already
-const port = process.env.PORT || 3002;
+const port = process.env.PORT || 3003;
 //
 
 // Equivalent of create server in http library
@@ -24,7 +24,8 @@ if(process.env.NODE_ENV !== 'production') {
 
 // Connect to database
 
-const dbConn = process.env.MONGODB_URI || 'mongodb://localhost/secret_gigs';
+// const dbConn = process.env.MONGODB_URI || 'mongodb://localhost/secret_gigs';
+const dbConn = 'mongodb://localhost/secret_gigs';
 
 mongoose.connect(
     dbConn,
@@ -47,7 +48,7 @@ mongoose.connect(
 //     res.send("Express server running")
 // });
 
-app.get("/", eventRouter)
+app.use("/", eventRouter)
 
 // Listen
 app.listen(port, () => console.log(`Listening on port ${port}`));

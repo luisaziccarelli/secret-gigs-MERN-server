@@ -4,4 +4,8 @@ const getAllEvents = function(){
     return Event.find()
 }
 
-module.exports = {getAllEvents}
+const addEvent = function(body){
+    return new Event(body)
+}
+
+module.exports = {getAllEvents, addEvent}
