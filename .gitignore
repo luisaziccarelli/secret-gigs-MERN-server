@@ -2,3 +2,4 @@ node_modules/
 client.http
 .DS_Store
 .env
+*.env
