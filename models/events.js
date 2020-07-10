@@ -1,7 +1,7 @@
 const mongoose = require("mongoose")
 const Schema = mongoose.Schema
 
-const Events = new Schema ({
+const Event = new Schema ({
     name:{
         type: String,
         required: true
@@ -24,6 +24,6 @@ const Events = new Schema ({
     }
 })
 
-module.exports = mongoose.model("Events",Events)
+module.exports = mongoose.model("Event",Event)
 
 
