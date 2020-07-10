@@ -7,6 +7,10 @@ const mongoose = require("mongoose")
 // or port assigned already
 const port = process.env.port || 3002;
 
+if(process.env.NODE_ENV !== 'production') {
+    require('dotenv').config();
+  }
+
 // Equivalent of create server in http library
 const app = express();
 
