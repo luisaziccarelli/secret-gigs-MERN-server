@@ -15,7 +15,8 @@ app.use(cors());
 app.use(bodyParser.json());
 
 // Connect to database
-const dbConn = "mongodb://localhost/secret_gigs"
+
+const dbConn = process.env.MONGODB_URI || 'mongodb://localhost/secret_gigs';
 
 mongoose.connect(
     dbConn,
