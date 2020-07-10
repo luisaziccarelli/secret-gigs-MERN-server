@@ -2,6 +2,8 @@ const express = require("express");
 const cors = require("cors");
 const bodyParser = require("body-parser");
 const mongoose = require("mongoose")
+const eventRouter = require("./routes/event_routes")
+
 
 // Sets port if deploying to external provider 
 // or port assigned already
@@ -41,9 +43,11 @@ mongoose.connect(
 )
 
 // Define a simple route for GET
-app.get("/",(req,res) => {
-    res.send("Express server running")
-});
+// app.get("/",(req,res) => {
+//     res.send("Express server running")
+// });
+
+app.get("/", eventRouter)
 
 // Listen
 app.listen(port, () => console.log(`Listening on port ${port}`));
