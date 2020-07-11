@@ -48,7 +48,7 @@ mongoose.connect(
 //     res.send("Express server running")
 // });
 
-app.use("/", eventRouter)
+app.use("/events", eventRouter)
 
 // Listen
 app.listen(port, () => console.log(`Listening on port ${port}`));
