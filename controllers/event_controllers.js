@@ -19,7 +19,7 @@ const getEvents = function(req,res){
 }
 
 const postEvent = function(req,res){
-    addEvent(req.body).save((err,event)=>{
+    addEvent(req).save((err,event)=>{
         if(err){
             res.status(500)
             res.json({
