@@ -1,7 +1,12 @@
-const {getAllEvents, addEvent, getEventById, updateEvent, deleteEvent} = require("../utils/event_utilities")
+const {
+    getAllEvents, 
+    addEvent, 
+    getEventById, 
+    updateEvent, 
+    deleteEvent} = require("../utils/event_utilities")
 
 const getEvents = function(req,res){
-    getAllEvents().exec((err,events) => {
+    getAllEvents(req).exec((err,events) => {
         if(err){
             res.status(500)
             return res.json({
@@ -14,7 +19,7 @@ const getEvents = function(req,res){
 }
 
 const postEvent = function(req,res){
-    addEvent(req.body).save((err,event)=>{
+    addEvent(req).save((err,event)=>{
         if(err){
             res.status(500)
             res.json({
@@ -28,7 +33,7 @@ const postEvent = function(req,res){
 }
 
 const getEvent = function(req,res){
-    getEventById(req.params.id).exec((err,event) => {
+    getEventById(req).exec((err,event) => {
         if (err){
             res.status(404)
             return res.send("Event not found")
@@ -52,7 +57,7 @@ const modifyEvent = function(req, res){
 }
 
 const removeEvent = function(req,res){
-    deleteEvent(req.params.id).exec((err,event)=>{
+    deleteEvent(req).exec((err,event)=>{
         if (err){
             res.status(500)
             return res.json({
