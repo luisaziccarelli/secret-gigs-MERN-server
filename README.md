@@ -1,11 +1,15 @@
-# Secret Gigs Full Stack App
+# Secret Gigs - Full Stack App
+
+[TOC]
 
 ## Contributors
+
 Ignacio Giadach | https://github.com/igscl/
 
 Luisa Ziccarelli | https://github.com/luisaziccarelli
 
 ## Purpose
+
 Secret Gigs allows bands to connect with their fan-base in a live setting during COVID times. Due to audience restrictions and venues being generally closed, this app allows fans to attend events in secret locations for a limited number of attendees by a random selection process. The idea is to keep the social distancing and safety measures in place, while allowing safe and controlled events.
 
 ## Features
@@ -58,7 +62,7 @@ Specific bands fan-base, music, concert and live music enthusiasts that haven't 
   - Git: version control system used to manage and keep track of the source code history. 
   - GitFlow: the'Forking workflow' was used for this application, which allowed each contributor to have their own server-side repository, for each contributor to take turns manage the push to the official repository, and lastly the use of feature branches.
   - Github: cloud-based hosting service to manage the git repositories for the application. 
- 
+
 
 ## Dataflow Diagram
 
@@ -93,15 +97,15 @@ Specific bands fan-base, music, concert and live music enthusiasts that haven't 
 
 ## Trello Screenshots
 
-#### 1
+#### 1 . (06-07-2020)
 ![alt text](./docs/screenshots/trello_screenshot1_06:07.png "Trello 1")
-#### 2
+#### 2. (08-07-2020)
 ![alt text](./docs/screenshots/trello_screenshot_8:7.png "Trello 2")
-#### 3
+#### 3. (09-07-2020)
 ![alt text](./docs/screenshots/trello_screenshot2_9:7.png "Trello 3")
-#### 4
+#### 4. (10-07-2020)
 ![alt text](./docs/screenshots/trello_screenshot_10:7.png "Trello 4")
-#### 5
+#### 5. (11-07-2020)
 ![alt text](./docs/screenshots/trello_screenshot_11:7.png "Trello 5")
-#### 5
-![alt text](./docs/screenshots/trello_screenshot_13:7.png "Trello 5")
+#### 6. (13-07-2020)
+![alt text](./docs/screenshots/trello_screenshot_13:7.png "Trello 5") 
