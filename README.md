@@ -24,11 +24,13 @@ Link:
 
 ##### 1.1.1 What is the problem this application is trying to solve?
 
-Secret Gigs allows bands to connect with their fan-base in a live setting during COVID times. Due to audience restrictions and venues being generally closed, this app allows fans to attend events in secret locations for a limited number of attendees by a random selection process. The idea is to keep the social distancing and safety measures in place, while allowing safe and controlled events.
+This year the events surrounding the coronavirus pandemic have affected millions of Australians and people around the world. Some industries have suffered more than others. For those Australians working in the arts and the entertainment industry there have been major financial loses due to cancellation of major events, closure of venues, and restrictions around social distancing.
+
+ For a lot of musicians this has meant losing not only their jobs, incomes, and the platforms to connect with their fans and followers. One of the most concerning things is the uncertainty around this situation. A lot musicians and bands do not know  when these restrictions will ease and they will be allowed to reschedule their gigs. 
 
 ##### 1.1.2 How is this application solving the problem?
 
-
+Secret Gigs allows bands to connect with their fan-base in a live setting during COVID times. Due to audience restrictions and venues being generally closed, this app allows fans to attend events in secret locations for a limited number of attendees by a random selection process. The idea is to keep the social distancing and safety measures in place, while allowing safe and controlled events.
 
 ### 1.2 Functionality 
 
