@@ -32,17 +32,17 @@ Main features:
 
 - A user can register in the application. 
 - A registered user is able to login.
-- A registered user is able to go to the account section. In this section they can see their profile and event applications, listing current available events they can apply to.
+- Registered users are able to go to the account section, see their profile and event applications with a list of current available events they can apply to.
 - A registered user has the ability to apply to events.
 - A registered user has the ability to edit and delete their profile.
-- A registered user has the ability to get an application accepted or denied.
+- A registered user has the ability to get an application accepted or denied by random selection.
 
 Sprinkles:
 - A registered user can go into payment page when application is accepted.
 - Once a registered user pays for the application, is able to see further details of the gig.
 - An admin has the ability to login to an admin account.
 - An admin has the ability to see all user profiles.
-- An admin has the ability to see Open events and Closed events.
+- An admin has the ability to see open events and closed events.
 - An admin has the ability to see the number of invitations accepted and remaining for an open/closed event. 
 
 ### 1.4 Target audience
