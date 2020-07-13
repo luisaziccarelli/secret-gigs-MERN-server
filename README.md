@@ -8,16 +8,6 @@ Ignacio Giadach | https://github.com/igscl/
 
 Luisa Ziccarelli | https://github.com/luisaziccarelli
 
-
-
-## Deployed website
-
-Link: 
-
-Link:
-
-
-
 ## 1. Description of the website 
 
 ### 1.1 Purpose 
@@ -25,8 +15,6 @@ Link:
 ##### 1.1.1 What is the problem this application is trying to solve?
 
 This year the events surrounding the coronavirus pandemic have affected millions of Australians and people around the world. Some industries have suffered more than others. For those Australians working in the arts and the entertainment industry there have been major financial loses due to cancellation of major events, closure of venues, and restrictions around social distancing.
-
- For a lot of musicians this has meant losing not only their jobs, incomes, but also an important space to connect with their fans and followers. One of the most concerning things is the uncertainty around this situation. A lot musicians and bands do not know  when these restrictions would ease and they would be allowed to reschedule their gigs. Additionally, a lot of fans travel to see their favorite bands, which means these events have been are also heavily impacted by the borders re-openning and easing of cross-state and even international travel restrictions. 
 
 ##### 1.1.2 How is this application solving the problem?
 
@@ -107,7 +95,7 @@ Specific bands fan-base, music, concert and live music enthusiasts that haven't 
 ## 5. Wireframes
 
 ### 5.1 Desktop
-![alt text](./docs/wireframes_desktop/events_desktop.png "Home page Desktop")
+![alt text](./docs/wireframes_desktop/home_desktop.png "Home page Desktop")
 ![alt text](./docs/wireframes_desktop/sign_up_desktop.png "Sign up desktop")
 ![alt text](./docs/wireframes_desktop/login_desktop.png "Login desktop")
 ![alt text](./docs/wireframes_desktop/profile_desktop.png "Profile desktop")
