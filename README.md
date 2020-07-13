@@ -26,17 +26,21 @@ Link:
 
 This year the events surrounding the coronavirus pandemic have affected millions of Australians and people around the world. Some industries have suffered more than others. For those Australians working in the arts and the entertainment industry there have been major financial loses due to cancellation of major events, closure of venues, and restrictions around social distancing.
 
- For a lot of musicians this has meant losing not only their jobs, incomes, and the platforms to connect with their fans and followers. One of the most concerning things is the uncertainty around this situation. A lot musicians and bands do not know  when these restrictions will ease and they will be allowed to reschedule their gigs. 
+ For a lot of musicians this has meant losing not only their jobs, incomes, but also an important space to connect with their fans and followers. One of the most concerning things is the uncertainty around this situation. A lot musicians and bands do not know  when these restrictions would ease and they would be allowed to reschedule their gigs. Additionally, a lot of fans travel to see their favorite bands, which means these events have been are also heavily impacted by the borders re-openning and easing of cross-state and even international travel restrictions. 
 
 ##### 1.1.2 How is this application solving the problem?
 
-Secret Gigs allows bands to connect with their fan-base in a live setting during COVID times. Due to audience restrictions and venues being generally closed, this app allows fans to attend events in secret locations for a limited number of attendees by a random selection process. The idea is to keep the social distancing and safety measures in place, while allowing safe and controlled events.
+Secret Gigs is an application that allows bands to connect with their fan-base in a live setting during COVID times. Due to audience restrictions and venues being generally closed, this app allows fans to attend events in secret locations for a limited number of attendees by a random selection process. The idea is to keep the social distancing and safety measures in place, while also allowing safe and controlled events. This way, both musicians and bands are able to continue to perform and fans are able to enjoy the experience of watching their favorite bands live again. 
 
 ### 1.2 Functionality 
 
+Secret gigs allows fans or music enthusiasts to register in the website to be able to apply for open events. Once a user register they would be able to see the name of the event, the general location, and capacity. If a user applies they will be notified whether their application has been approved or rejected. Since the capacity of the events is limited, the access would be managed by either random selection or in a first-come first-serve basis. 
 
+Once the capacity for that particular event is reached and there are no invitations remaining, the user will be notified of the specific location and the 'secret' location will be revealed to the accepted user.
 
 ### 1.3 Features
+
+Main features:
 
 - A user can register in the application. 
 - A registered user is able to login.
