@@ -70,7 +70,7 @@ Specific bands fan-base, music, concert and live music enthusiasts that haven't 
 
 ## User Stories
 
-![alt text](./docs/secret-venue_userStories.png "User Stories")
+![alt text](./docs/secret_gigs_userStories.png "User Stories")
 
 ## Wireframes
 
