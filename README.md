@@ -8,11 +8,33 @@ Ignacio Giadach | https://github.com/igscl/
 
 Luisa Ziccarelli | https://github.com/luisaziccarelli
 
-## Purpose
+
+
+## Deployed website
+
+Link: 
+
+Link:
+
+
+
+## 1. Description of the website 
+
+### 1.1 Purpose 
+
+##### 1.1.1 What is the problem this application is trying to solve?
 
 Secret Gigs allows bands to connect with their fan-base in a live setting during COVID times. Due to audience restrictions and venues being generally closed, this app allows fans to attend events in secret locations for a limited number of attendees by a random selection process. The idea is to keep the social distancing and safety measures in place, while allowing safe and controlled events.
 
-## Features
+##### 1.1.2 How is this application solving the problem?
+
+
+
+### 1.2 Functionality 
+
+
+
+### 1.3 Features
 
 - A user can register in the application. 
 - A registered user is able to login.
@@ -29,10 +51,10 @@ Sprinkles:
 - An admin has the ability to see Open events and Closed events.
 - An admin has the ability to see the number of invitations accepted and remaining for an open/closed event. 
 
-## Target audience
+### 1.4 Target audience
 Specific bands fan-base, music, concert and live music enthusiasts that haven't attended any live gigs due to current events. This also works under "normal" conditions, having the ability to increase the attendees per venue as needed. Specific audiences would relate to the type of music, genre, year, etc.
 
-## Tech stack
+### 1.5 Tech stack
 - ​	Front-end
   - React.js: creates and manages the front-end of the application. 
   - JS: react uses javascript and more specifically ES6 standard features. Javascript will also be used to build the back-end of this application.
@@ -64,21 +86,21 @@ Specific bands fan-base, music, concert and live music enthusiasts that haven't 
   - Github: cloud-based hosting service to manage the git repositories for the application. 
 
 
-## Dataflow Diagram
+## 2. Dataflow Diagram
 
 ![alt text](./docs/R2-DFD.png "Data Flow Diagram")
 
-## Application Architecture Diagram
+## 3. Application Architecture Diagram
 
 ![alt text](./docs/Application_architecture_diagram.png "Application Architecture Diagram")
 
-## User Stories
+## 4. User Stories
 
 ![alt text](./docs/secret_gigs_userStories.png "User Stories")
 
-## Wireframes
+## 5. Wireframes
 
-### Desktop
+### 5.1 Desktop
 ![alt text](./docs/wireframes_desktop/events_desktop.png "Home page Desktop")
 ![alt text](./docs/wireframes_desktop/sign_up_desktop.png "Sign up desktop")
 ![alt text](./docs/wireframes_desktop/login_desktop.png "Login desktop")
@@ -87,25 +109,25 @@ Specific bands fan-base, music, concert and live music enthusiasts that haven't 
 ![alt text](./docs/wireframes_desktop/profiles_desktop.png "Profiles dsk")
 ![alt text](./docs/wireframes_desktop/events_desktop.png "Events dsk")
 
-### Ipad
+### 5.2 Ipad
 ![alt text](./docs/ipad_wireframes/ipad1_wireframes.png "Home, sign up, login Ipad")
 ![alt text](./docs/ipad_wireframes/ipad2_wireframes.png "Profile, admin, profiles, events Ipad")
 
-### Mobile 
+### 5.3 Mobile 
 ![alt text](./docs/mobile_wireframes/mobile_one.png "Home, login, sign up, profiles Mobile")
 ![alt text](./docs/mobile_wireframes/mobile_two.png "Admin, profiles, events Mobile")
 
-## Trello Screenshots
+## 6. Project Management
 
-#### 1 . (06-07-2020)
+#### 6.1 Trello Screenshots (06-07-2020)
 ![alt text](./docs/screenshots/trello_screenshot1_06:07.png "Trello 1")
-#### 2. (08-07-2020)
+#### 6. 2 Trello Screenshots (08-07-2020)
 ![alt text](./docs/screenshots/trello_screenshot_8:7.png "Trello 2")
-#### 3. (09-07-2020)
+#### 6. 3 Trello Screenshots (09-07-2020)
 ![alt text](./docs/screenshots/trello_screenshot2_9:7.png "Trello 3")
-#### 4. (10-07-2020)
+#### 6. 4 Trello Screenshots (10-07-2020)
 ![alt text](./docs/screenshots/trello_screenshot_10:7.png "Trello 4")
-#### 5. (11-07-2020)
+#### 6.5 Trello Screenshots (11-07-2020)
 ![alt text](./docs/screenshots/trello_screenshot_11:7.png "Trello 5")
-#### 6. (13-07-2020)
+#### 6.6 Trello Screenshots (13-07-2020)
 ![alt text](./docs/screenshots/trello_screenshot_13:7.png "Trello 5") 
