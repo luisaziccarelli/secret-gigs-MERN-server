@@ -21,7 +21,6 @@ if(process.env.NODE_ENV !== 'production') {
     require('dotenv').config();
   }
 
-
 // Connect to database
 
 // const dbConn = process.env.MONGODB_URI || 'mongodb://localhost/secret_gigs';
