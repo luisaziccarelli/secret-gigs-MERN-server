@@ -30,14 +30,35 @@ Specific bands fan-base, music, concert and live music enthusiasts that haven't 
 
 ## Tech stack
 - ​	Front-end
-  - React.js: a front end JavaScript library for creating user interfaces. React will allow to control the behaviour of user interactions with our application. Through buttons and forms the user will be able to interact with the application, each action resulting in sending a query to the node.js server. React allows us to customize components using a combination of HTML, CSS and JS. 
+  - React.js: creates and manages the front-end of the application. 
+  - JS: react uses javascript and more specifically ES6 standard features. Javascript will also be used to build the back-end of this application.
+  - JSX: stands for JavaScript XML, which allows to write HTML in react.
+  - HTML 5: HTML tags will be used inside JS code and transformed into react components by JSX.
+  - CSS 3: will be used to style the react components.
+  - Bootstrap: framework used for building response websites.
+
 - Back-end
-  - Node.js: a JavaScript runtime that operates on Chrome’s V8 JavaScript engine and brings JavaScript to the server. In this application our node.js server will connect with the database through mongoose, which is a Mongo DB object modeling tool designed to work in an asynchronous environment. 
-  - Express: a minimalist web framework for Node.js known for its speed. Express will be used in this application to write handlers for requests with different HTTP verbs at different URL paths (routes). Also express middleware will allow to add support for cookies, sessions, and users. 
-  - MongoDB: an open-source, document-based database. For this application mongoDB will store data about users such as: user profiles, events they have applied for, and the status of their application. It will also store data about the events, open and closed, as well as invitations accepted and remaining for each. The data stored in the mongoDB database will be sent back to the node server, which will then send the details to the  front-end and update them.
+  - Node.js: server side run time. 
+  - Express: web framework for node that will handle the http requests from the front end. 
+  - MongoDB: document-based database used to store persistent state and data relevant to the users and events. 
+  - Mongoose: is a Mongo DB object modeling tool that allows to communicate with the MongoDB through the MongoDB driver.
+  - Passport.js: is authentication middleware for Node.js to handle the users and admins.
+
+- Testing
+  - Mocha: test framework for node.js used for unit and integration testing.
+  - Expect: assertion style or library chosen for unit testing.
+  - Cypress: testing framworkd running on and in the browser chosen for testing of the front-end and integration testing.
+  
 - Deployment
   - Netlify: a cloud platform used for hosting the front-end of the application. 
   - Heroku: a cloud platform used for hosting the back-end the application.
+  - MongoDB Atlas: global cloud database to deploy and scale our MongoDB. 
+
+- Source control 
+  - Git: version control system used to manage and keep track of the source code history. 
+  - GitFlow: the'Forking workflow' was used for this application, which allowed each contributor to have their own server-side repository, for each contributor to take turns manage the push to the official repository, and lastly the use of feature branches.
+  - Github: cloud-based hosting service to manage the git repositories for the application. 
+ 
 
 ## Dataflow Diagram
 
@@ -45,7 +66,7 @@ Specific bands fan-base, music, concert and live music enthusiasts that haven't 
 
 ## Application Architecture Diagram
 
-![alt text](./docs/Secret-venue_ArchitectureDiagram.png "Application Architecture Diagram")
+![alt text](./docs/Secret-venue_ArchitectureDiagram.png"Application Architecture Diagram")
 
 ## User Stories
 
@@ -53,18 +74,34 @@ Specific bands fan-base, music, concert and live music enthusiasts that haven't 
 
 ## Wireframes
 
-![alt text](./docs/wireframes_desktop/Home_desktop.png "Home page Desktop")
-![alt text](./docs/wireframes_desktop/Signup_desktop.png "Sign up desktop")
-![alt text](./docs/wireframes_desktop/Login_desktop.png "Login desktop")
-![alt text](./docs/wireframes_desktop/Profile_desktop.png "Profile desktop")
-![alt text](./docs/wireframes_desktop/Admin_desktop.png  "Admin desktop") 
-![alt text](./docs/wireframes_desktop/Profiles_desktop.png "Profiles dsk")
-![alt text](./docs/wireframes_desktop/Events_desktop.png "Events dsk")
+### Desktop
+![alt text](./docs/wireframes_desktop/events_desktop.png"Home page Desktop")
+![alt text](./docs/wireframes_desktop/sign_up_desktop.png"Sign up desktop")
+![alt text](./docs/wireframes_desktop/login_desktop.png "Login desktop")
+![alt text](./docs/docs/wireframes_desktop/profile_desktop.png "Profile desktop")
+![alt text](./docs/wireframes_desktop/admin_dashboard_desktop.png  "Admin desktop") 
+![alt text](./docs/wireframes_desktop/profiles_desktop.png "Profiles dsk")
+![alt text](./docs/wireframes_desktop/events_desktop.png "Events dsk")
+
+### Ipad
+![alt text](./docs/ipad_wireframes/ipad1_wireframes.png "Home, sign up, login Ipad")
+![alt text](./docs/ipad_wireframes/ipad2_wireframes.png "Profile, admin, profiles, events Ipad")
+
+### Mobile 
+![alt text](./docs/mobile_wireframes/mobile_one.png "Home, login, sign up, profiles Mobile")
+![alt text](./docs/mobile_wireframes/mobile_two.png "Admin, profiles, events Mobile")
 
 ## Trello Screenshots
 
-![alt text](./docs/screenshots/trello_screenshot1.png "Trello 1")
-
-![alt text](./docs/screenshots/trello_screenshot2.png "Trello 2")
-
-![alt text](./docs/screenshots/trello_screenshot3.png "Trello 3")
+#### 1
+![alt text](./docs/screenshots/trello_screenshot1_06:07.png "Trello 1")
+#### 2
+![alt text](./docs/screenshots/trello_screenshot_8:7.png "Trello 2")
+#### 3
+![alt text](./docs/screenshots/trello_screenshot2_9:7.png "Trello 3")
+#### 4
+![alt text](./docs/screenshots/trello_screenshot_10:7.png "Trello 4")
+#### 5
+![alt text](./docs/screenshots/trello_screenshot_11:7.png"Trello 5")
+#### 5
+![alt text](./docs/screenshots/trello_screenshot_13:7.png "Trello 5")
