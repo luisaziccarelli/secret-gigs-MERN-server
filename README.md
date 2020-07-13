@@ -66,7 +66,7 @@ Specific bands fan-base, music, concert and live music enthusiasts that haven't 
 
 ## Application Architecture Diagram
 
-![alt text](./docs/Secret-venue_ArchitectureDiagram.png"Application Architecture Diagram")
+![alt text](./docs/Application_architecture_diagram.png "Application Architecture Diagram")
 
 ## User Stories
 
@@ -75,11 +75,11 @@ Specific bands fan-base, music, concert and live music enthusiasts that haven't 
 ## Wireframes
 
 ### Desktop
-![alt text](./docs/wireframes_desktop/events_desktop.png"Home page Desktop")
-![alt text](./docs/wireframes_desktop/sign_up_desktop.png"Sign up desktop")
+![alt text](./docs/wireframes_desktop/events_desktop.png "Home page Desktop")
+![alt text](./docs/wireframes_desktop/sign_up_desktop.png "Sign up desktop")
 ![alt text](./docs/wireframes_desktop/login_desktop.png "Login desktop")
-![alt text](./docs/docs/wireframes_desktop/profile_desktop.png "Profile desktop")
-![alt text](./docs/wireframes_desktop/admin_dashboard_desktop.png  "Admin desktop") 
+![alt text](./docs/wireframes_desktop/profile_desktop.png "Profile desktop")
+![alt text](./docs/wireframes_desktop/admin_dashboard_desktop.png "Admin desktop") 
 ![alt text](./docs/wireframes_desktop/profiles_desktop.png "Profiles dsk")
 ![alt text](./docs/wireframes_desktop/events_desktop.png "Events dsk")
 
@@ -102,6 +102,6 @@ Specific bands fan-base, music, concert and live music enthusiasts that haven't 
 #### 4
 ![alt text](./docs/screenshots/trello_screenshot_10:7.png "Trello 4")
 #### 5
-![alt text](./docs/screenshots/trello_screenshot_11:7.png"Trello 5")
+![alt text](./docs/screenshots/trello_screenshot_11:7.png "Trello 5")
 #### 5
 ![alt text](./docs/screenshots/trello_screenshot_13:7.png "Trello 5")
