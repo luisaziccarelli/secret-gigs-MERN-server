@@ -1,8 +1,10 @@
-const express = require("express");
-const cors = require("cors");
-const bodyParser = require("body-parser");
+const express = require("express")
+const cors = require("cors")
+const bodyParser = require("body-parser")
 const mongoose = require("mongoose")
+const passport = require("passport")
 const eventRouter = require("./routes/event_routes")
+const authRouter = require("./routes/auth_routes")
 
 
 // Sets port if deploying to external provider 
@@ -31,7 +33,8 @@ mongoose.connect(
     {
         useNewUrlParser : true,
         useUnifiedTopology : true,
-        useFindAndModify : false
+        useFindAndModify : false,
+        useCreateIndex : true
     }, 
     err => {
         if (err){
@@ -47,7 +50,14 @@ mongoose.connect(
 //     res.send("Express server running")
 // });
 
+require('./config/passport')
+app.use(passport.initialize())
+app.use(passport.session())
+
+
+//routes
 app.use("/events", eventRouter)
+app.use("/auth", authRouter)
 
 // Listen
 app.listen(port, () => console.log(`Listening on port ${port}`));
