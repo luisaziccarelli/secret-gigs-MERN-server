@@ -12,7 +12,7 @@ const getResponse = function (req, res) {
                 'Something went wrong, we cannot find this token'
               )
           
-            res.writeHead(200, { 'Content-Type': 'text/xml' });
+            res.writeHead(404, { 'Content-Type': 'text/xml' });
            return res.end(twiml.toString());
         }
         twiml.message(
