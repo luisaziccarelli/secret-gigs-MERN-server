@@ -8,7 +8,7 @@ const Token = new Schema ({
     },
     lives:{
         type: Number,
-        required: true
+        required: true,
     },
     increase:{
         type: Number,

@@ -1,11 +1,20 @@
 const Token = require("../models/token")
 
 const getTokenById = function(req){
-    return Token.findByIdAndUpdate(req.body.Body, {
-        new: true,
-        lives: 0
-    })
+    // req.body.lives = req.body.lives
+    return Token.findById(req.body.Body)
     // return Token.findById(req.body.Body)
 }
 
-module.exports = {getTokenById}
+
+const updateToken = function(req){
+    if (req.lives > 0){
+        req.lives = req.lives -= 1
+    }
+    return Token.findByIdAndUpdate(req.id, req,{
+    new: true,
+    })
+    
+}
+
+module.exports = {getTokenById, updateToken}

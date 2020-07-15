@@ -1,5 +1,6 @@
 const MessagingResponse = require('twilio').twiml.MessagingResponse;
-const {getTokenById} = require('../utils/token_utilities')
+const {getTokenById, updateToken} = require('../utils/token_utilities');
+const { update } = require('../models/user');
 
 
 const getResponse = function (req, res) {
@@ -15,8 +16,15 @@ const getResponse = function (req, res) {
             res.writeHead(404, { 'Content-Type': 'text/xml' });
            return res.end(twiml.toString());
         }
+        // res.json(token)
+        updateToken(token).exec((err,token) => {
+            if (err){
+                
+            }
+            return token
+        })
         twiml.message(
-            'You have redeemed the token'
+            `You have redeemed the ${token}`
           )
         
           res.writeHead(200, { 'Content-Type': 'text/xml' });
@@ -24,13 +32,14 @@ const getResponse = function (req, res) {
         })}
 
 
+
 const getToken = function(req,res){
     getTokenById(req).exec((err,token) => {
         if (err){
-            res.status(404)
+            res.sendStatus(404)
             return res.send("Token not found")
         }
-        res.send(token)
+        res.json(token)
     })
 }
 
