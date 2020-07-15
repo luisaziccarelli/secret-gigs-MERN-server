@@ -5,6 +5,8 @@ const mongoose = require("mongoose")
 const passport = require("passport")
 const eventRouter = require("./routes/event_routes")
 const authRouter = require("./routes/auth_routes")
+const MessagingResponse = require('twilio').twiml.MessagingResponse;
+const tokenRouter = require("./routes/token_routes")
 
 
 // Sets port if deploying to external provider 
@@ -18,6 +20,7 @@ const app = express();
 // Call the middleware we want to use
 app.use(cors());
 app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
 
 if(process.env.NODE_ENV !== 'production') {
     require('dotenv').config();
@@ -54,10 +57,10 @@ require('./config/passport')
 app.use(passport.initialize())
 app.use(passport.session())
 
-
 //routes
 app.use("/events", eventRouter)
 app.use("/auth", authRouter)
+app.use('/sms',tokenRouter)
 
 // Listen
 app.listen(port, () => console.log(`Listening on port ${port}`));

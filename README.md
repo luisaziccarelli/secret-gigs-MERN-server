@@ -14,17 +14,17 @@ Luisa Ziccarelli | https://github.com/luisaziccarelli
 
 ##### 1.1.1 What is the problem this application is trying to solve?
 
-This year the events surrounding the coronavirus pandemic have affected millions of Australians and people around the world. Some industries have suffered more than others. For those Australians working in the arts and the entertainment industry there have been major financial loses due to cancellation of major events, closure of venues, and restrictions around social distancing.
+How cool would it be to watch your favourite artists in a live setting with as many people as you could fit in your living room? How about watching your favourite artist in a small bar with your best friends? Have you been craving for a live show, but want to keep with the safety measures in place due to Coronavirus? We're here for you!
 
 ##### 1.1.2 How is this application solving the problem?
 
-Secret Gigs is an application that allows bands to connect with their fan-base in a live setting during COVID times. Due to audience restrictions and venues being generally closed, this app allows fans to attend events in secret locations for a limited number of attendees by a random selection process. The idea is to keep the social distancing and safety measures in place, while also allowing safe and controlled events. This way, both musicians and bands are able to continue to perform and fans are able to enjoy the experience of watching their favorite bands live again. 
+Secret Gigs is an application that allows bands to connect with their fan-base in a live setting (and also during COVID times!). This app allows fans to attend events in secret locations for a limited number of attendees by a random selection process. The idea is to keep the social distancing and safety measures in place, while also allowing safe and controlled events, so bands and fans are safe! This way, bands can continue to perform and fans can enjoy the experience of watching their favourite bands live again... even better than that, in an intimate setting!
 
 ### 1.2 Functionality 
 
-Secret gigs allows fans or music enthusiasts to register in the website to be able to apply for open events. Once a user register they would be able to see the name of the event, the general location, and capacity. If a user applies they will be notified whether their application has been approved or rejected. Since the capacity of the events is limited, the access would be managed by either random selection or in a first-come first-serve basis. 
+Secret gigs allow fans or music enthusiasts to register on the website to be able to apply for open events. Once a user registers, they can see the name of the event, the general location, and capacity. If a user applies they are notified whether their application has been approved or rejected. Since the capacity of the events is limited, the access is managed by either random selection or a first-come-first-serve basis. 
 
-Once the capacity for that particular event is reached and there are no invitations remaining, the user will be notified of the specific location and the 'secret' location will be revealed to the accepted user.
+Once the capacity for that particular event is reached, the user will be notified of the specific location, and the 'secret' location will be revealed to the accepted user once payment is made.
 
 ### 1.3 Features
 
