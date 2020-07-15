@@ -1,6 +1,8 @@
 const MessagingResponse = require('twilio').twiml.MessagingResponse;
-const {getTokenById, updateToken} = require('../utils/token_utilities');
+const { getTokenById, updateToken } = require('../utils/token_utilities');
 const { update } = require('../models/user');
+const token = require('../models/token');
+// const twiml = new MessagingResponse();
 
 
 const getResponse = function (req, res) {
@@ -19,7 +21,9 @@ const getResponse = function (req, res) {
         // res.json(token)
         updateToken(token).exec((err,token) => {
             if (err){
-                
+                twiml.message(
+                    `Nothing here ${token}`
+                  )
             }
             return token
         })
@@ -33,9 +37,9 @@ const getResponse = function (req, res) {
 
 
 
-const getToken = function(req,res){
-    getTokenById(req).exec((err,token) => {
-        if (err){
+const getToken = function (req, res) {
+    getTokenById(req).exec((err, token) => {
+        if (err) {
             res.sendStatus(404)
             return res.send("Token not found")
         }
@@ -43,4 +47,4 @@ const getToken = function(req,res){
     })
 }
 
-module.exports = {getResponse, getToken}
+module.exports = { getResponse, getToken }

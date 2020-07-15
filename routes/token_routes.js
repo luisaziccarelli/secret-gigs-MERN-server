@@ -4,6 +4,6 @@ const {getResponse, getToken} = require("../controllers/token_controller")
 
 router.post("/", getResponse)
 
-router.get("/:id", getToken)
+router.get("/get", getToken)
 
 module.exports = router

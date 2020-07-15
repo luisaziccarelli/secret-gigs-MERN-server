@@ -8,6 +8,7 @@ const getTokenById = function(req){
 
 
 const updateToken = function(req){
+    console.log(req)
     if (req.lives > 0){
         req.lives = req.lives -= 1
     }

@@ -20,6 +20,7 @@ const app = express();
 // Call the middleware we want to use
 app.use(cors());
 app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
 
 if(process.env.NODE_ENV !== 'production') {
     require('dotenv').config();
