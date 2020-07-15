@@ -68,4 +68,5 @@ const removeEvent = function(req,res){
     })
 }
 
+
 module.exports = {getEvents, postEvent, getEvent, modifyEvent, removeEvent}
