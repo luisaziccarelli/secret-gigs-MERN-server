@@ -11,6 +11,10 @@ const User = new Schema({
     phoneNumber: {
         type: String,
         required: true
+    },
+    eventsApplied: {
+        type: Array,
+        required: false
     }
 })
 
