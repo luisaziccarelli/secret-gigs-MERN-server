@@ -14,6 +14,8 @@ Luisa Ziccarelli | https://github.com/luisaziccarelli
 
 How cool would it be to watch your favourite artists in a live setting with as many people as you could fit in your living room? How about watching your favourite artist in a small bar with your best friends? Have you been craving for a live show, but want to keep with the safety measures in place due to Coronavirus? We're here for you!
 
+And if you're a band... Want to manage cool and safe events for your fans? We've got you covered! You can run this app on your own website!
+
 ##### 1.1.2 How is this application solving the problem?
 
 Secret Gigs is an application that allows bands to connect with their fan-base in a live setting (and also during COVID times!). This app allows fans to attend events in secret locations for a limited number of attendees by a random selection process. The idea is to keep the social distancing and safety measures in place, while also allowing safe and controlled events, so bands and fans are safe! This way, bands can continue to perform and fans can enjoy the experience of watching their favourite bands live again... even better than that, in an intimate setting!
@@ -46,6 +48,8 @@ Sprinkles:
 ### 1.4 Target audience
 Specific bands fan-base, music, concert and live music enthusiasts that haven't attended any live gigs due to current events. This also works under "normal" conditions, having the ability to increase the attendees per venue as needed. Specific audiences would relate to the type of music, genre, year, etc.
 
+Also bands that want to connect with their fan-base organising safe, cool, memorable and controlled events. The selection process is seamless and you can distribute invitations in a fair way.
+
 ### 1.5 Tech stack
 - ​	Front-end
   - React.js: creates and manages the front-end of the application. 
@@ -65,7 +69,7 @@ Specific bands fan-base, music, concert and live music enthusiasts that haven't 
 - Testing
   - Mocha: test framework for node.js used for unit and integration testing.
   - Expect: assertion style or library chosen for unit testing.
-  - Cypress: testing framworkd running on and in the browser chosen for testing of the front-end and integration testing.
+  - Cypress: testing framework running on and in the browser chosen for testing of the front-end and integration testing.
   
 - Deployment
   - Netlify: a cloud platform used for hosting the front-end of the application. 
@@ -74,7 +78,7 @@ Specific bands fan-base, music, concert and live music enthusiasts that haven't 
 
 - Source control 
   - Git: version control system used to manage and keep track of the source code history. 
-  - GitFlow: the'Forking workflow' was used for this application, which allowed each contributor to have their own server-side repository, for each contributor to take turns manage the push to the official repository, and lastly the use of feature branches.
+  - GitFlow: the 'Forking workflow' was used for this application, which allowed each contributor to have their own server-side repository, for each contributor to take turns manage the push to the official repository, and lastly the use of feature branches.
   - Github: cloud-based hosting service to manage the git repositories for the application. 
 
 
