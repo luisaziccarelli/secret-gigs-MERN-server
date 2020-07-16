@@ -1,7 +1,5 @@
 # Secret Gigs - Full Stack App
 
-[TOC]
-
 ## Contributors
 
 Ignacio Giadach | https://github.com/igscl/
