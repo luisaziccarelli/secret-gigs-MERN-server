@@ -1,7 +1,85 @@
-{
+[{
     "name": "Event 1",
     "date": "September 5",
     "generalLocation": "NSW",
     "specificLocation": "12 Street St.",
-    "capacity": 10
+    "capacity": 10,
+    "applicants": [
+        {
+
+            "username": "person1",
+            "accepted": false
+
+        },
+        {
+            "username": "person2",
+            "accepted": false
+        }]
+
+},{
+    "name": "Event 2",
+    "date": "September 5",
+    "generalLocation": "NSW",
+    "specificLocation": "12 Street St.",
+    "capacity": 10,
+    "applicants": [{
+
+    "username": "",
+    "accepted": false
+
+    }]
+
+},{
+    "name": "Event 3",
+    "date": "September 5",
+    "generalLocation": "NSW",
+    "specificLocation": "12 Street St.",
+    "capacity": 10,
+    "applicants": [{
+
+    "username": "",
+    "accepted": false
+
+    }]
+
+},{
+    "name": "Event 4",
+    "date": "September 5",
+    "generalLocation": "NSW",
+    "specificLocation": "12 Street St.",
+    "capacity": 10,
+    "applicants": [{
+
+    "username": "",
+    "accepted": false
+
+    }]
+
+},{
+    "name": "Event 5",
+    "date": "September 5",
+    "generalLocation": "NSW",
+    "specificLocation": "12 Street St.",
+    "capacity": 10,
+    "applicants": [{
+
+    "username": "",
+    "accepted": false
+
+    }]
+
+},{
+    "name": "Event 6",
+    "date": "September 5",
+    "generalLocation": "NSW",
+    "specificLocation": "12 Street St.",
+    "capacity": 10,
+    "applicants": [{
+
+    "username": "",
+    "accepted": false
+
+    }]
+
 }
+]

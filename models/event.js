@@ -21,6 +21,10 @@ const Event = new Schema ({
     capacity:{
         type: Number,
         required: true
+    },
+    applicants:{
+        type: Array,
+        required: false
     }
 })
 

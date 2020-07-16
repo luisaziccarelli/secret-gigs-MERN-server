@@ -1,6 +1,6 @@
 const express = require("express")
 const router = express.Router()
-const {getResponse, getToken, getResponseAndUpdate} = require("../controllers/token_controller")
+const {getToken, getResponseAndUpdate} = require("../controllers/token_controller")
 
 router.post("/", getResponseAndUpdate)
 
