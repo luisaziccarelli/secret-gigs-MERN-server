@@ -10,10 +10,10 @@ const Token = new Schema ({
         type: Number,
         required: true,
     },
-    increase:{
-        type: Number,
-        default: 1
+    phone:{
+        type: String
     }
+
 })
 
 module.exports = mongoose.model("Token",Token)

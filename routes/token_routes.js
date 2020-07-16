@@ -1,8 +1,8 @@
 const express = require("express")
 const router = express.Router()
-const {getResponse, getToken} = require("../controllers/token_controller")
+const {getResponse, getToken, getResponseAndUpdate} = require("../controllers/token_controller")
 
-router.post("/", getResponse)
+router.post("/", getResponseAndUpdate)
 
 router.get("/get", getToken)
 
