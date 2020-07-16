@@ -7,7 +7,7 @@ const getTokenKey = function(req){
 }
 
 
-const updateToken = function(token){
+const redeemToken = function(token){
     console.log("THIS IS UTILS",token)
     if (token.lives > 0){
         token.lives = token.lives -= 1
@@ -18,4 +18,4 @@ const updateToken = function(token){
     
 }
 
-module.exports = {getTokenKey, updateToken}
+module.exports = {getTokenKey, redeemToken}

@@ -11,7 +11,7 @@ const Token = new Schema ({
         required: true,
     },
     phone:{
-        type: String
+        type: Array
     }
 
 })

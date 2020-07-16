@@ -1,5 +1,5 @@
 const MessagingResponse = require('twilio').twiml.MessagingResponse;
-const { getTokenKey, updateToken } = require('../utils/token_utilities');
+const { getTokenKey, redeemToken } = require('../utils/token_utilities');
 const { update } = require('../models/user');
 const token = require('../models/token');
 
@@ -19,7 +19,7 @@ const getResponseAndUpdate = function (req, res) {
             res.writeHead(200, { 'Content-Type': 'text/xml' });
             return res.end(twiml.toString());
         }
-        updateToken(token).exec((err, token) => {
+        redeemToken(token).exec((err, token) => {
             if (err) {
                 res.status(500)
                 return res.json({
@@ -32,16 +32,10 @@ const getResponseAndUpdate = function (req, res) {
     
             res.writeHead(200, { 'Content-Type': 'text/xml' });
             res.end(twiml.toString());
-
-            // token.phone = phoneNumber
-            // console.log(token)
-            // return token
         })
 
     })
 }
-
-
 
 const getToken = function (req, res) {
     getTokenKey(req).exec((err, token) => {
