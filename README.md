@@ -1,7 +1,5 @@
 # Secret Gigs - Full Stack App
 
-[TOC]
-
 ## Contributors
 
 Ignacio Giadach | https://github.com/igscl/
@@ -95,13 +93,13 @@ Specific bands fan-base, music, concert and live music enthusiasts that haven't 
 ## 5. Wireframes
 
 ### 5.1 Desktop
-![alt text](./docs/wireframes_desktop/home_desktop.png "Home page Desktop")
-![alt text](./docs/wireframes_desktop/sign_up_desktop.png "Sign up desktop")
-![alt text](./docs/wireframes_desktop/login_desktop.png "Login desktop")
-![alt text](./docs/wireframes_desktop/profile_desktop.png "Profile desktop")
-![alt text](./docs/wireframes_desktop/admin_dashboard_desktop.png "Admin desktop") 
-![alt text](./docs/wireframes_desktop/profiles_desktop.png "Profiles dsk")
-![alt text](./docs/wireframes_desktop/events_desktop.png "Events dsk")
+![alt text](./docs/wireframes_desktop/home-desktop.png "Home page Desktop")
+![alt text](./docs/wireframes_desktop/sign-up-desktop.png "Sign up desktop")
+![alt text](./docs/wireframes_desktop/login-desktop.png "Login desktop")
+![alt text](./docs/wireframes_desktop/profile-desktop.png "Profile desktop")
+![alt text](./docs/wireframes_desktop/admin-dashboard-desktop.png "Admin desktop") 
+![alt text](./docs/wireframes_desktop/profiles-desktop.png "Profiles dsk")
+![alt text](./docs/wireframes_desktop/events-desktop.png "Events dsk")
 
 ### 5.2 Ipad
 ![alt text](./docs/ipad_wireframes/ipad1_wireframes.png "Home, sign up, login Ipad")
