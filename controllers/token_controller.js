@@ -1,49 +1,52 @@
 const MessagingResponse = require('twilio').twiml.MessagingResponse;
-const { getTokenById, updateToken } = require('../utils/token_utilities');
+const { getTokenKey, redeemToken } = require('../utils/token_utilities');
 const { update } = require('../models/user');
 const token = require('../models/token');
-// const twiml = new MessagingResponse();
 
-
-const getResponse = function (req, res) {
+const getResponseAndUpdate = function (req, res) {
     const twiml = new MessagingResponse()
-
-    getTokenById(req).exec((err, token) => {
+    
+    getTokenKey(req).exec((err, token) => {
+        console.log("BODY!!!",req.body)
+        let phoneNumber = req.body.From
+        console.log("PHONE!!!", phoneNumber)
         if (err) {
 
             twiml.message(
                 'Something went wrong, we cannot find this token'
             )
 
-            res.writeHead(404, { 'Content-Type': 'text/xml' });
+            res.writeHead(200, { 'Content-Type': 'text/xml' });
             return res.end(twiml.toString());
         }
-        // res.json(token)
-        updateToken(token).exec((err, token) => {
+        redeemToken(token).exec((err, token) => {
             if (err) {
-
+                res.status(500)
+                return res.json({
+                    error: err.message
+                })
             }
-            return token
+            twiml.message(
+                `You have redeemed the token ${token._id}, ${token.lives} usages left`
+            )
+    
+            res.writeHead(200, { 'Content-Type': 'text/xml' });
+            res.end(twiml.toString());
         })
-        twiml.message(
-            `You have redeemed the ${token}`
-        )
 
-        res.writeHead(200, { 'Content-Type': 'text/xml' });
-        res.end(twiml.toString());
     })
 }
 
-
-
 const getToken = function (req, res) {
-    getTokenById(req).exec((err, token) => {
+    getTokenKey(req).exec((err, token) => {
         if (err) {
-            res.sendStatus(404)
-            return res.send("Token not found")
+            res.status(500)
+            return res.json({
+                error: err.message
+            })
         }
         res.json(token)
     })
 }
 
-module.exports = { getResponse, getToken }
+module.exports = { getResponseAndUpdate, getToken }
