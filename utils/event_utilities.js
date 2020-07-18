@@ -45,14 +45,19 @@ const updateApplyToEvent = async (req) => {
             eventId: event.id
         }
         event.applicants.push(newApplication)
-        user[0].eventsApplied.push(newEventAppliedTo)
+        
+        // refactor
+        // if (user[0] !== undefined){
+        //     user[0].eventsApplied.push(newEventAppliedTo)
+        //     return User.findByIdAndUpdate(user[0].id, user[0], {
+        //     new: true
+        //     })
+        // }
 
         return Event.findByIdAndUpdate(req.params.id, event, {
             new: true
         })
-        // return User.findByIdAndUpdate(user.id, user, {
-        //     new: true
-        // })
+
 
     } else {
         return Event.findById(req.params.id)
