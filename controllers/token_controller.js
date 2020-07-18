@@ -26,9 +26,16 @@ const getResponseAndUpdate = function (req, res) {
                     error: err.message
                 })
             }
-            twiml.message(
-                `You have redeemed the token ${token._id}, ${token.lives} usages left`
-            )
+            console.log(token.lives, "TOKEN LIVES!!!!!!!")
+            if (token.valid === true){
+                twiml.message(
+                    `You have redeemed the token ${token._id}, ${token.lives} usages left`
+                )
+            }else if (token.valid === false){
+                twiml.message(
+                    `Token ${token._id}, has no further usages left`
+                )
+            }
     
             res.writeHead(200, { 'Content-Type': 'text/xml' });
             res.end(twiml.toString());
