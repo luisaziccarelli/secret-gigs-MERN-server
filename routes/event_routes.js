@@ -5,7 +5,10 @@ const {
     postEvent, 
     getEvent, 
     modifyEvent, 
-    removeEvent} = require("../controllers/event_controllers")
+    removeEvent,
+    applyToEvent
+
+} = require("../controllers/event_controllers")
 
 // READ
 router.get("/", getEvents)
@@ -16,10 +19,13 @@ router.post("/", postEvent)
 //READ
 router.get("/:id", getEvent)
 
-//UPDATE
+// //UPDATE
 router.put("/:id", modifyEvent)
 
 //DELETE
 router.delete("/:id", removeEvent)
+
+//UPDATE
+router.put("/:id/apply", applyToEvent)
 
 module.exports = router;

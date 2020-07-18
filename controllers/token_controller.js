@@ -33,7 +33,7 @@ const getResponseAndUpdate = function (req, res) {
                 )
             }else if (token.valid === false){
                 twiml.message(
-                    `Token ${token._id}, has no further usages left`
+                    `Sorry, token ${token._id}, has no further usages left`
                 )
             }
     

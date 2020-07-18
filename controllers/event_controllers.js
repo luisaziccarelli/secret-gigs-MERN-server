@@ -3,7 +3,10 @@ const {
     addEvent, 
     getEventById, 
     updateEvent, 
-    deleteEvent} = require("../utils/event_utilities")
+    deleteEvent,
+    updateApplyToEvent
+    
+    } = require("../utils/event_utilities")
 
 const getEvents = function(req,res){
     getAllEvents(req).exec((err,events) => {
@@ -68,5 +71,20 @@ const removeEvent = function(req,res){
     })
 }
 
+const applyToEvent = (req, res) => {
+    if (req.error) {
+        res.status(req.error.status)
+        res.send(req.error.message)
+    } else {
+        // req.body.username = req.user.username
+        updateApplyToEvent(req).then((event) => {
+            res.status(200).send(event)
+        }).catch((err) => {
+            res.status(500).json({ error: err.message })
 
-module.exports = {getEvents, postEvent, getEvent, modifyEvent, removeEvent}
+		})
+    }
+}
+
+
+module.exports = {getEvents, postEvent, getEvent, modifyEvent, removeEvent, applyToEvent}
