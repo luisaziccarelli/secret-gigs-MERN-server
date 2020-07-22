@@ -3,6 +3,8 @@ const cors = require("cors")
 const bodyParser = require("body-parser")
 const mongoose = require("mongoose")
 const passport = require("passport")
+const session = require('express-session')
+const MongoStore = require("connect-mongo")(session)
 const eventRouter = require("./routes/event_routes")
 const authRouter = require("./routes/auth_routes")
 const MessagingResponse = require('twilio').twiml.MessagingResponse;
@@ -52,6 +54,21 @@ mongoose.connect(
 // app.get("/",(req,res) => {
 //     res.send("Express server running")
 // });
+
+app.use(
+    session({
+        secret: "super secret secret",
+        resave: false,
+        saveUninitialized: false,
+        cookie: {
+            maxAge: 1800000
+        },
+        store: new MongoStore({
+            mongooseConnection: mongoose.connection
+        })
+    })
+)
+
 
 require('./config/passport')
 app.use(passport.initialize())

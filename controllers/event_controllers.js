@@ -76,7 +76,7 @@ const applyToEvent = (req, res) => {
         res.status(req.error.status)
         res.send(req.error.message)
     } else {
-        // req.body.username = req.user.username
+        req.body.username = req.user.username
         updateApplyToEvent(req).then((event) => {
             res.status(200).send(event)
         }).catch((err) => {
@@ -86,5 +86,20 @@ const applyToEvent = (req, res) => {
     }
 }
 
+const userAuthenticated = function (req, res, next) {
+    if (req.isAuthenticated()) {
+        next()
+    } else {
+        res.sendStatus(403)
+    }
+}
 
-module.exports = {getEvents, postEvent, getEvent, modifyEvent, removeEvent, applyToEvent}
+module.exports = {
+    getEvents, 
+    postEvent, 
+    getEvent, 
+    modifyEvent, 
+    removeEvent, 
+    applyToEvent,
+    userAuthenticated
+}

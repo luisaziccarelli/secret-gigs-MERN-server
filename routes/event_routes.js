@@ -6,18 +6,22 @@ const {
     getEvent, 
     modifyEvent, 
     removeEvent,
-    applyToEvent
+    applyToEvent,
+    userAuthenticated
 
 } = require("../controllers/event_controllers")
+
+//After this require login
+router.use(userAuthenticated)
 
 // READ
 router.get("/", getEvents)
 
-// CREATE
-router.post("/", postEvent)
-
 //READ
 router.get("/:id", getEvent)
+
+// CREATE
+router.post("/", postEvent)
 
 // //UPDATE
 router.put("/:id", modifyEvent)

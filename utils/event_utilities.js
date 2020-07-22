@@ -38,7 +38,8 @@ const updateApplyToEvent = async (req) => {
 
     if (foundMatches[0] === undefined && user[0] !== undefined) {
         let newApplication = {
-            username: req.body.username,
+            username: req.user.username,
+            phoneNumber: user[0].phoneNumber,
             accepted: false
         }
         let newEventAppliedTo = {

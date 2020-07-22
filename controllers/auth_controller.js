@@ -20,11 +20,13 @@ const register = function (req, res) {
 const authenticate = passport.authenticate("local")
 // helper function
 
-function loginUser(req, res) {
+const loginUser = (req, res) => {
     	// passport.authenticate returns a function that we will call 
 //with req, res, and a callback function to execute on success    
 
     authenticate(req, res, function () {
+        console.log('authenticated user: ', req.user.username);
+		console.log('session: ', req.session);
         res.json(req.user)
     })
 }
