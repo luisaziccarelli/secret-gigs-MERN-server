@@ -86,5 +86,20 @@ const applyToEvent = (req, res) => {
     }
 }
 
+const userAuthenticated = function (req, res, next) {
+    if (req.isAuthenticated()) {
+        next()
+    } else {
+        res.sendStatus(403)
+    }
+}
 
-module.exports = {getEvents, postEvent, getEvent, modifyEvent, removeEvent, applyToEvent}
+module.exports = {
+    getEvents, 
+    postEvent, 
+    getEvent, 
+    modifyEvent, 
+    removeEvent, 
+    applyToEvent,
+    userAuthenticated
+}
