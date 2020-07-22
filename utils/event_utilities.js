@@ -1,7 +1,6 @@
 const Event = require("../models/event")
 const User = require("../models/user")
 const { ObjectID } = require('mongodb');
-const user = require("../models/user");
 
 
 const getAllEvents = function(req){
