@@ -1,6 +1,7 @@
 const Event = require("../models/event")
 const User = require("../models/user")
 const { ObjectID } = require('mongodb');
+const user = require("../models/user");
 
 
 const getAllEvents = function(req){
@@ -27,19 +28,22 @@ const deleteEvent = function(req){
 
 const updateApplyToEvent = async (req) => {
     let event = await Event.findById(req.params.id)
-    let user = await User.find({
-        "username":`${req.body.username}`
-    })
+    console.log("EVENT!",event)
+    // let user = await User.find({
+    //     "username":`${req.body.username}`
+    // })
+
 
     let foundMatches = await Event.find({
         "_id": ObjectID(`${event.id}`),
-        "applicants": { "username": `${req.body.username}`, "accepted": false }
+        "applicants": { "username": `${req.user.username}`,"phoneNumber": `${req.user.phoneNumber}`, "accepted": false }
     })
+    console.log(`FOUND! ${req.user.username}`,foundMatches[0])
 
-    if (foundMatches[0] === undefined && user[0] !== undefined) {
+    if (foundMatches[0] === undefined /*&& user[0] !== undefined*/) {
         let newApplication = {
             username: req.user.username,
-            phoneNumber: user[0].phoneNumber,
+            phoneNumber: req.user.phoneNumber,
             accepted: false
         }
         let newEventAppliedTo = {
@@ -65,7 +69,6 @@ const updateApplyToEvent = async (req) => {
     }
 
 }
-
 
 
 module.exports = {

@@ -76,7 +76,7 @@ const applyToEvent = (req, res) => {
         res.status(req.error.status)
         res.send(req.error.message)
     } else {
-        req.body.username = req.user.username
+        // req.body.username = req.user.username
         updateApplyToEvent(req).then((event) => {
             res.status(200).send(event)
         }).catch((err) => {
