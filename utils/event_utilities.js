@@ -1,5 +1,6 @@
 const Event = require("../models/event")
-const { ObjectID } = require('mongodb');
+const { ObjectID } = require('mongodb')
+const User = require("../models/user")
 
 
 const getAllEvents = function (req) {
@@ -27,9 +28,9 @@ const deleteEvent = function (req) {
 const updateApplyToEvent = async (req) => {
     let event = await Event.findById(req.params.id)
     console.log("EVENT!", event)
-    // let user = await User.find({
-    //     "username":`${req.body.username}`
-    // })
+    let user = await User.find({
+        "username":`${req.user.username}`
+    })
 
 
     let foundMatches = await Event.find({
@@ -51,10 +52,9 @@ const updateApplyToEvent = async (req) => {
 
         // refactor
         // if (user[0] !== undefined){
-        //     user[0].eventsApplied.push(newEventAppliedTo)
-        //     return User.findByIdAndUpdate(user[0].id, user[0], {
-        //     new: true
-        //     })
+        //saves the event to the user
+            user[0].eventsApplied.push(newEventAppliedTo)
+            user[0].save()
         // }
 
         return Event.findByIdAndUpdate(req.params.id, event, {
@@ -107,6 +107,8 @@ const chooseRandomUsers = async (req) => {
     })
 
 }
+
+
 
 
 module.exports = {

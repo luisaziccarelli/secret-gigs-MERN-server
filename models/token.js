@@ -12,6 +12,10 @@ const Token = new Schema ({
     },
     usedByPhone:{
         type: Array
+    },
+    forEvent:{
+        type: String,
+        required: true
     }
 
 })

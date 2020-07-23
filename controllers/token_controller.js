@@ -31,13 +31,6 @@ const getResponseAndUpdate = function (req, res) {
                     `You have redeemed the token ${token._id}, ${token.lives} usages left`
                 )
 
-                // acceptUser(token)
-                
-                //pushes the token user's phone number to the token DB
-                token.usedByPhone.push(req.body.From)
-                token.save()
-
-
             } else if (token.valid === false && req.body.From !== undefined) {
                 twiml.message(
                     `Sorry, token ${token._id}, has no further usages left`
