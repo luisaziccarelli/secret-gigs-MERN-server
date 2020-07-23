@@ -72,8 +72,54 @@ const updateApplyToEvent = async (req) => {
 const chooseRandomUsers = async (req) => {
     let event = await Event.findById(req.params.id)
     // /:id/choose
+    console.log("THIS IS THE EVENT!!!!",event)
     console.log(event.applicants)
     event.applicants
+
+    let acceptedUsers = [];
+    // let indexResults = []
+    // let index = null
+    
+    // for (let i = 0; (i < 5 && (indexResults.includes(index) === false )); i++) {
+    //     console.log("INDEX RESULTS",indexResults.includes(index))
+    //     index = Math.floor(Math.random() * event.applicants.length)
+    //     let randomUser = event.applicants[index];
+    //     indexResults.push(index)
+    //     console.log(indexResults)
+    //   // Since we are only removing one element
+    //   acceptedUsers.push(randomUser);
+    // }
+    // console.log(indexResults)
+    // console.log("acceptedUsers",acceptedUsers)
+    // return acceptedUsers;  
+
+    let limit = event.capacity,
+    amount = 5,
+    lowerBound = 1,
+    upperBound = event.applicants.length,
+    uniqueRandomIndex = []
+
+if (amount < limit) limit = amount; //Infinite loop if you want more unique
+                                    //Natural numbers than exist in a
+                                    // given range
+while (uniqueRandomIndex.length < limit) {
+    let index = Math.floor(Math.random()*(upperBound - lowerBound) + lowerBound);
+    if (uniqueRandomIndex.indexOf(index) == -1) { 
+        let randomUser = event.applicants[index];
+        acceptedUsers.push(randomUser);
+        uniqueRandomIndex.push( index );
+        console.log(uniqueRandomIndex)
+        console.log(acceptedUsers)
+        
+    }
+
+}
+return Event.findByIdAndUpdate(req.params.id, acceptedUsers, {
+    new: true
+})
+
+
+
     // const randomElement = array[Math.floor(Math.random() * array.length)];
 
     //
