@@ -38,8 +38,11 @@ const acceptUser = function(token){
     // let user = await User.find({"phoneNumber": `${phone.body.From}`})
 
 
-    // let event = await Event.find({"applicants.phoneNumber":`${req.body.From}`})
+    // let event = await Event.find({"applicants.phoneNumber":`${token.body.From}`})
+    // event.applicants.push({phoneNumber: token.body.From, accepted: true})
+    // event.save()
 
+    
     // if (event !== undefined){
 
     //     console.log(req)

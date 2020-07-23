@@ -69,6 +69,19 @@ const updateApplyToEvent = async (req) => {
 
 }
 
+const chooseRandomUsers = async (req) => {
+    let event = await Event.findById(req.params.id)
+    // /:id/choose
+    console.log(event.applicants)
+    event.applicants
+    // const randomElement = array[Math.floor(Math.random() * array.length)];
+
+    //
+    // return Event.findByIdAndUpdate(req.params.id, req.body, {
+    //     new: true
+    // })
+}
+
 
 module.exports = {
     getAllEvents, 
@@ -76,5 +89,6 @@ module.exports = {
     getEventById, 
     updateEvent, 
     deleteEvent,
-    updateApplyToEvent
+    updateApplyToEvent,
+    chooseRandomUsers
 }

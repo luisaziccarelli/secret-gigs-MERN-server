@@ -4,7 +4,8 @@ const {
     getEventById, 
     updateEvent, 
     deleteEvent,
-    updateApplyToEvent
+    updateApplyToEvent,
+    chooseRandomUsers
     
     } = require("../utils/event_utilities")
 
@@ -94,6 +95,21 @@ const userAuthenticated = function (req, res, next) {
     }
 }
 
+const selectRandomUsers = (req, res) => {
+    if (req.error) {
+        res.status(req.error.status)
+        res.send(req.error.message)
+    } else {
+        // req.body.username = req.user.username
+            chooseRandomUsers(req).then((event) => {
+            res.status(200).send(event)
+        }).catch((err) => {
+            res.status(500).json({ error: err.message })
+
+		})
+    }
+} 
+
 module.exports = {
     getEvents, 
     postEvent, 
@@ -101,5 +117,6 @@ module.exports = {
     modifyEvent, 
     removeEvent, 
     applyToEvent,
-    userAuthenticated
+    userAuthenticated,
+    selectRandomUsers
 }
