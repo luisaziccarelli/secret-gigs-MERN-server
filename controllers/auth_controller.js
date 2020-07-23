@@ -27,7 +27,8 @@ const loginUser = (req, res) => {
     authenticate(req, res, function () {
         console.log('authenticated user: ', req.user.username);
 		console.log('session: ', req.session);
-        res.json(req.user)
+        res.status(200);
+        res.json({user: req.user, sessionID: req.sessionID});
     })
 }
 
