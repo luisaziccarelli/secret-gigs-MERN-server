@@ -1,6 +1,7 @@
 const MessagingResponse = require('twilio').twiml.MessagingResponse;
 const { getTokenKey, redeemToken } = require('../utils/token_utilities');
 const token = require('../models/token');
+const {findAndAcceptTokenUser} = require('../utils/event_utilities')
 
 const getResponseAndUpdate = function (req, res) {
     const twiml = new MessagingResponse()
@@ -30,6 +31,7 @@ const getResponseAndUpdate = function (req, res) {
                 twiml.message(
                     `You have redeemed the token ${token._id}, ${token.lives} usages left`
                 )
+                findAndAcceptTokenUser(req)
 
             } else if (token.valid === false && req.body.From !== undefined) {
                 twiml.message(

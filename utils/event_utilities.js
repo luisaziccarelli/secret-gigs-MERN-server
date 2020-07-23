@@ -108,7 +108,27 @@ const chooseRandomUsers = async (req) => {
 
 }
 
+const findAndAcceptTokenUser = async (req) =>{
+    //if phone number has applied to event, accept it
+    // if req.body.From is in Event
+    try{
+    let event = await Event.find(
+        {"applicants.phoneNumber": req.body.From})
+        
+        console.log("FOUND MATCHES!",event)
+        indexMatch = event[0].applicants.findIndex(x => x.phoneNumber === `${req.body.From}`)
+        console.log(indexMatch)
+        event[0].applicants[indexMatch].accepted = true
+        event[0].save()
 
+        return Event.findByIdAndUpdate(event[0].id, event[0], {
+            new: true
+        })
+    
+    }catch(err){
+
+    }
+}
 
 
 module.exports = {
@@ -118,5 +138,6 @@ module.exports = {
     updateEvent,
     deleteEvent,
     updateApplyToEvent,
-    chooseRandomUsers
+    chooseRandomUsers,
+    findAndAcceptTokenUser
 }
