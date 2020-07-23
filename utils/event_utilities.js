@@ -1,5 +1,4 @@
 const Event = require("../models/event")
-const User = require("../models/user")
 const { ObjectID } = require('mongodb');
 
 
@@ -76,26 +75,11 @@ const chooseRandomUsers = async (req) => {
     console.log(event.applicants)
     event.applicants
 
-    let acceptedUsers = [];
-    // let indexResults = []
-    // let index = null
-
-    // for (let i = 0; (i < 5 && (indexResults.includes(index) === false )); i++) {
-    //     console.log("INDEX RESULTS",indexResults.includes(index))
-    //     index = Math.floor(Math.random() * event.applicants.length)
-    //     let randomUser = event.applicants[index];
-    //     indexResults.push(index)
-    //     console.log(indexResults)
-    //   // Since we are only removing one element
-    //   acceptedUsers.push(randomUser);
-    // }
-    // console.log(indexResults)
-    // console.log("acceptedUsers",acceptedUsers)
-    // return acceptedUsers;  
+    let acceptedUsers = []
 
     let limit = event.capacity,
-        amount = 2,
-        lowerBound = 1,
+        amount = 3,
+        lowerBound = 0,
         upperBound = event.applicants.length,
         uniqueRandomIndex = []
     let allUsers = []
@@ -108,43 +92,20 @@ const chooseRandomUsers = async (req) => {
             let randomUser = event.applicants[index]
             acceptedUsers.push(randomUser)
             uniqueRandomIndex.push(index)
-            console.log(uniqueRandomIndex)
 
-            let allIndexes = Array.from(Array(upperBound).keys())
-            let missingIndexes = allIndexes.filter((index) => !acceptedUsers.includes(index));
-
-            let rejectedUsers = []
-
-            for (let i = 0; i < missingIndexes.length; i++) {
-                let rejectedUser = event.applicants[i]
-                rejectedUsers.push(rejectedUser)
-
-
-            }
-            allUsers = acceptedUsers.concat(rejectedUsers)
-            console.log(allUsers)
-
-            for (let i = 0; i < acceptedUsers.length; i++) {
-                acceptedUsers[i].accepted = true
-            }
-            console.log(acceptedUsers)
-
+            
         }
-
+    }
+    for (let i=0 ; i<event.applicants.length; i++){
+        if (uniqueRandomIndex.includes(i)){
+        event.applicants[i].accepted = true
+    }
     }
 
-    return Event.findByIdAndUpdate(req.params.id, { $set: { applicants: allUsers } }, {
+    return Event.findByIdAndUpdate(req.params.id, event, {
         new: true
     })
 
-
-
-    // const randomElement = array[Math.floor(Math.random() * array.length)];
-
-    //
-    // return Event.findByIdAndUpdate(req.params.id, req.body, {
-    //     new: true
-    // })
 }
 
 

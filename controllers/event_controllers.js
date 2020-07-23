@@ -101,7 +101,8 @@ const selectRandomUsers = (req, res) => {
         res.send(req.error.message)
     } else {
         // req.body.username = req.user.username
-            chooseRandomUsers(req).then((event) => {
+        
+        chooseRandomUsers(req).then((event) => {
             res.status(200).send(event)
         }).catch((err) => {
             res.status(500).json({ error: err.message })
