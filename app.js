@@ -20,7 +20,20 @@ const port = process.env.PORT || 3003;
 const app = express();
 
 // Call the middleware we want to use
-app.use(cors());
+const whitelist = ['http://localhost:3001']
+app.use(cors({
+    credentials: true,
+    origin: function (origin,callback) {
+        // Check each url in whitelist and see if it includes the origin (instead of matching exact string)
+        const whitelistIndex = whitelist.findIndex((url) => url.includes(origin))
+        console.log("found whitelistIndex", whitelistIndex)
+        callback(null,whitelistIndex > -1)
+    }
+}));
+
+// const corsOptions = {
+//     credentials: true
+// }
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
