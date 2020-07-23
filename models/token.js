@@ -10,7 +10,7 @@ const Token = new Schema ({
         type: Number,
         required: true,
     },
-    phone:{
+    usedByPhone:{
         type: Array
     }
 

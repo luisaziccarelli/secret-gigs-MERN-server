@@ -7,7 +7,8 @@ const {
     modifyEvent, 
     removeEvent,
     applyToEvent,
-    userAuthenticated
+    userAuthenticated,
+    selectRandomUsers
 
 } = require("../controllers/event_controllers")
 
@@ -31,5 +32,8 @@ router.delete("/:id", removeEvent)
 
 //UPDATE
 router.put("/:id/apply", applyToEvent)
+
+//UPDATE
+router.put("/:id/select", selectRandomUsers)
 
 module.exports = router;

@@ -1,13 +1,12 @@
 const MessagingResponse = require('twilio').twiml.MessagingResponse;
 const { getTokenKey, redeemToken } = require('../utils/token_utilities');
-const { update } = require('../models/user');
 const token = require('../models/token');
 
 const getResponseAndUpdate = function (req, res) {
     const twiml = new MessagingResponse()
-    
+
     getTokenKey(req).exec((err, token) => {
-        console.log("BODY!!!",req.body)
+        console.log("BODY!!!", req.body)
         let phoneNumber = req.body.From
         console.log("PHONE!!!", phoneNumber)
         if (err) {
@@ -19,7 +18,7 @@ const getResponseAndUpdate = function (req, res) {
             res.writeHead(200, { 'Content-Type': 'text/xml' });
             return res.end(twiml.toString());
         }
-        redeemToken(token).exec((err, token) => {
+        redeemToken(token, req).exec((err, token) => {
             if (err) {
                 res.status(500)
                 return res.json({
@@ -27,16 +26,29 @@ const getResponseAndUpdate = function (req, res) {
                 })
             }
             console.log(token.lives, "TOKEN LIVES!!!!!!!")
-            if (token.valid === true){
+            if (token.valid === true && req.body.From !== undefined) {
                 twiml.message(
                     `You have redeemed the token ${token._id}, ${token.lives} usages left`
                 )
-            }else if (token.valid === false){
+
+                // acceptUser(token)
+                
+                //pushes the token user's phone number to the token DB
+                token.usedByPhone.push(req.body.From)
+                token.save()
+
+
+            } else if (token.valid === false && req.body.From !== undefined) {
                 twiml.message(
                     `Sorry, token ${token._id}, has no further usages left`
                 )
+
+            } else {
+                twiml.message(
+                    `Warning, we couldn't read your phone number. If the token is valid it has been used.`
+                )
             }
-    
+
             res.writeHead(200, { 'Content-Type': 'text/xml' });
             res.end(twiml.toString());
         })
