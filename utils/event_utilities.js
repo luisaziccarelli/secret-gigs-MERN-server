@@ -3,31 +3,31 @@ const User = require("../models/user")
 const { ObjectID } = require('mongodb');
 
 
-const getAllEvents = function(req){
+const getAllEvents = function (req) {
     return Event.find()
 }
 
-const addEvent = function(req){
+const addEvent = function (req) {
     return new Event(req.body)
 }
 
-const getEventById = function(req){
+const getEventById = function (req) {
     return Event.findById(req.params.id)
 }
 
-const updateEvent = function(req){
+const updateEvent = function (req) {
     return Event.findByIdAndUpdate(req.params.id, req.body, {
         new: true
     })
 }
 
-const deleteEvent = function(req){
+const deleteEvent = function (req) {
     return Event.findByIdAndRemove(req.params.id)
 }
 
 const updateApplyToEvent = async (req) => {
     let event = await Event.findById(req.params.id)
-    console.log("EVENT!",event)
+    console.log("EVENT!", event)
     // let user = await User.find({
     //     "username":`${req.body.username}`
     // })
@@ -35,9 +35,9 @@ const updateApplyToEvent = async (req) => {
 
     let foundMatches = await Event.find({
         "_id": ObjectID(`${event.id}`),
-        "applicants": { "username": `${req.user.username}`,"phoneNumber": `${req.user.phoneNumber}`, "accepted": false }
+        "applicants": { "username": `${req.user.username}`, "phoneNumber": `${req.user.phoneNumber}`, "accepted": false }
     })
-    console.log(`FOUND! ${req.user.username}`,foundMatches[0])
+    console.log(`FOUND! ${req.user.username}`, foundMatches[0])
 
     if (foundMatches[0] === undefined /*&& user[0] !== undefined*/) {
         let newApplication = {
@@ -49,7 +49,7 @@ const updateApplyToEvent = async (req) => {
             eventId: event.id
         }
         event.applicants.push(newApplication)
-        
+
         // refactor
         // if (user[0] !== undefined){
         //     user[0].eventsApplied.push(newEventAppliedTo)
@@ -72,14 +72,14 @@ const updateApplyToEvent = async (req) => {
 const chooseRandomUsers = async (req) => {
     let event = await Event.findById(req.params.id)
     // /:id/choose
-    console.log("THIS IS THE EVENT!!!!",event)
+    console.log("THIS IS THE EVENT!!!!", event)
     console.log(event.applicants)
     event.applicants
 
     let acceptedUsers = [];
     // let indexResults = []
     // let index = null
-    
+
     // for (let i = 0; (i < 5 && (indexResults.includes(index) === false )); i++) {
     //     console.log("INDEX RESULTS",indexResults.includes(index))
     //     index = Math.floor(Math.random() * event.applicants.length)
@@ -94,29 +94,48 @@ const chooseRandomUsers = async (req) => {
     // return acceptedUsers;  
 
     let limit = event.capacity,
-    amount = 5,
-    lowerBound = 1,
-    upperBound = event.applicants.length,
-    uniqueRandomIndex = []
+        amount = 2,
+        lowerBound = 1,
+        upperBound = event.applicants.length,
+        uniqueRandomIndex = []
+    let allUsers = []
 
-if (amount < limit) limit = amount; //Infinite loop if you want more unique
-                                    //Natural numbers than exist in a
-                                    // given range
-while (uniqueRandomIndex.length < limit) {
-    let index = Math.floor(Math.random()*(upperBound - lowerBound) + lowerBound);
-    if (uniqueRandomIndex.indexOf(index) == -1) { 
-        let randomUser = event.applicants[index];
-        acceptedUsers.push(randomUser);
-        uniqueRandomIndex.push( index );
-        console.log(uniqueRandomIndex)
-        console.log(acceptedUsers)
-        
+    if (amount < limit) limit = amount
+
+    while (uniqueRandomIndex.length < limit) {
+        let index = Math.floor(Math.random() * (upperBound - lowerBound) + lowerBound)
+        if (uniqueRandomIndex.indexOf(index) == -1) {
+            let randomUser = event.applicants[index]
+            acceptedUsers.push(randomUser)
+            uniqueRandomIndex.push(index)
+            console.log(uniqueRandomIndex)
+
+            let allIndexes = Array.from(Array(upperBound).keys())
+            let missingIndexes = allIndexes.filter((index) => !acceptedUsers.includes(index));
+
+            let rejectedUsers = []
+
+            for (let i = 0; i < missingIndexes.length; i++) {
+                let rejectedUser = event.applicants[i]
+                rejectedUsers.push(rejectedUser)
+
+
+            }
+            allUsers = acceptedUsers.concat(rejectedUsers)
+            console.log(allUsers)
+
+            for (let i = 0; i < acceptedUsers.length; i++) {
+                acceptedUsers[i].accepted = true
+            }
+            console.log(acceptedUsers)
+
+        }
+
     }
 
-}
-return Event.findByIdAndUpdate(req.params.id, acceptedUsers, {
-    new: true
-})
+    return Event.findByIdAndUpdate(req.params.id, { $set: { applicants: allUsers } }, {
+        new: true
+    })
 
 
 
@@ -130,10 +149,10 @@ return Event.findByIdAndUpdate(req.params.id, acceptedUsers, {
 
 
 module.exports = {
-    getAllEvents, 
-    addEvent, 
-    getEventById, 
-    updateEvent, 
+    getAllEvents,
+    addEvent,
+    getEventById,
+    updateEvent,
     deleteEvent,
     updateApplyToEvent,
     chooseRandomUsers
