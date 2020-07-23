@@ -9,7 +9,7 @@ const getTokenKey = function(req){
 
 let lastTokenLife = 0
 
-const redeemToken = function(token){
+const redeemToken = function(token, req){
     console.log("THIS IS UTILS",token)
     //this is for the token's last usage
     if (token.lives === 0 && token.valid === true){
@@ -22,7 +22,9 @@ const redeemToken = function(token){
     // this is to deduct a life out of the token each time it's used
     if (token.lives > 0){
         token.lives = token.lives -= 1
-        // req.body.From
+        
+        //pushes the token user's phone number to the token DB
+        token.usedByPhone.push(req.body.From)
 
         return Token.findByIdAndUpdate(token.id, token,{
             new: true,
@@ -32,30 +34,6 @@ const redeemToken = function(token){
     if (token.lives === 0 && token.valid === false){
         return Token.findById(token)
     }
-}
-
-const acceptUser = function(token){
-    // let hasToken = await Token.find({"usedByPhone": `${phone.body.From}`})
-    // let user = await User.find({"phoneNumber": `${phone.body.From}`})
-
-
-    // let event = await Event.find({"applicants.phoneNumber":`${token.body.From}`})
-    // event.applicants.push({phoneNumber: token.body.From, accepted: true})
-    // event.save()
-
-
-    // if (event !== undefined){
-
-    //     console.log(req)
-    //     let userDetails = {
-    //         username: req.user.username,
-    //         phoneNumber: req.body.From,
-    //     }
-    //     token.usedByPhone.push(userDetails)
-    //     token.save()
-    // }
-
-
 }
 
 module.exports = {getTokenKey, redeemToken}
