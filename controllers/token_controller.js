@@ -18,7 +18,7 @@ const getResponseAndUpdate = function (req, res) {
             res.writeHead(200, { 'Content-Type': 'text/xml' });
             return res.end(twiml.toString());
         }
-        redeemToken(token).exec((err, token) => {
+        redeemToken(token, req).exec((err, token) => {
             if (err) {
                 res.status(500)
                 return res.json({
@@ -31,13 +31,7 @@ const getResponseAndUpdate = function (req, res) {
                     `You have redeemed the token ${token._id}, ${token.lives} usages left`
                 )
 
-                // acceptUser(token).exec((err, token) => {
-                //     if (err) {
-                //         res.status(500)
-                //         return res.json({
-                //             error: err.message
-                //         })
-                //     }})
+                // acceptUser(token)
                 
                 //pushes the token user's phone number to the token DB
                 token.usedByPhone.push(req.body.From)

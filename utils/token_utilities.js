@@ -22,6 +22,7 @@ const redeemToken = function(token){
     // this is to deduct a life out of the token each time it's used
     if (token.lives > 0){
         token.lives = token.lives -= 1
+        // req.body.From
 
         return Token.findByIdAndUpdate(token.id, token,{
             new: true,
@@ -42,7 +43,7 @@ const acceptUser = function(token){
     // event.applicants.push({phoneNumber: token.body.From, accepted: true})
     // event.save()
 
-    
+
     // if (event !== undefined){
 
     //     console.log(req)
