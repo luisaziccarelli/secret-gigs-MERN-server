@@ -1,6 +1,13 @@
 const Event = require("../models/event")
 const { ObjectID } = require('mongodb')
-const User = require("../models/user")
+const User = require("../models/user");
+const { TokenInstance } = require("twilio/lib/rest/api/v2010/account/token");
+const Token = require("../models/token")
+
+require('dotenv').config();
+const accountSid = process.env.TWILIO_ACCOUNT_SID;
+const authToken = process.env.TWILIO_AUTH_TOKEN;
+const client = require('twilio')(accountSid, authToken);
 
 
 const getAllEvents = function (req) {
@@ -69,16 +76,17 @@ const updateApplyToEvent = async (req) => {
 }
 
 const chooseRandomUsers = async (req) => {
+
     let event = await Event.findById(req.params.id)
     // /:id/choose
     console.log("THIS IS THE EVENT!!!!", event)
-    console.log(event.applicants)
+    console.log(event)
     event.applicants
 
     let acceptedUsers = []
 
     let limit = event.capacity,
-        amount = 3,
+        amount = 1,
         lowerBound = 0,
         upperBound = event.applicants.length,
         uniqueRandomIndex = []
@@ -99,6 +107,17 @@ const chooseRandomUsers = async (req) => {
     for (let i=0 ; i<event.applicants.length; i++){
         if (uniqueRandomIndex.includes(i)){
         event.applicants[i].accepted = true
+        let token = await Token.findOne({lives:5})
+
+        
+        client.messages
+        .create({
+            body: `Good news! You've been accepted! Text the token to up to 5 friends for them to get accepted too! \n \n ${token.id}`,
+            from: '+61488839216',
+            to: `${event.applicants[i].phoneNumber}`
+        })
+        .then(message => console.log(message.sid))
+
     }
     }
 
