@@ -26,6 +26,7 @@ const postEvent = function(req,res){
     addEvent(req).save((err,event)=>{
         if(err){
             res.status(500)
+            console.log(err)
             res.json({
                 error: err.message
             })
